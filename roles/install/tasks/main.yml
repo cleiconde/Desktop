@@ -1,6 +1,6 @@
 ---
 - name: Instalando Programas
-  become: yes
+  become: true
   apt:
     name: "{{ item }}"
     state: latest
