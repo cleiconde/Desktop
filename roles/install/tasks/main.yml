@@ -1,6 +1,6 @@
 ---
 - name: Instalando Programas
-  become: true
+  become: yes
   apt:
     name: "{{ item }}"
     state: latest
@@ -25,5 +25,22 @@
     apt:
       update_cache: yes
       name: brave-browser
+
+  - block:
+    - name: Install Google Key
+      become: yes
+      apt_key: 
+        url: 'https://dl.google.com/linux/linux_signing_key.pub'
+        state: present
+    - name: Install Google Repository
+      become: yes
+      apt_repository:
+        repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+        state: present
+        filename: google-chrome
+    - name: Install Google Chrome
+      become: yes
+      apt:
+        name: google-chrome-stable
 
 ...
