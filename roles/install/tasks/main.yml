@@ -131,8 +131,9 @@
       keyserver: 'pgp.mit.edu'
       id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   - name: Install Dropbox Repository
-    apt_repository: 'deb https://linux.dropbox.com/ubuntu focal main'
-    state: present
+    apt_repository: 
+      repo: 'deb https://linux.dropbox.com/ubuntu focal main'
+      state: present
   - name: Install Dropbox
     apt:
       name: dropbox
