@@ -1,7 +1,7 @@
 ---
 - name: Instalando Programas
   become: yes
-  yum:
+  apt:
     name: "{{ item }}"
     state: latest
   loop: "{{ packages }}"  
