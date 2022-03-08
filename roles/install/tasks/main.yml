@@ -106,4 +106,22 @@
       name: vagrant
       update_cache: true
 
+- block:
+  - name: Install Visual Code Key
+    become: true
+    apt_key:
+      url: 'https://packages.microsoft.com/keys/microsoft.asc'
+      state: present
+  - name: Install Visual Code Repository
+    become: true
+    apt_repository:
+      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+      state: present
+      filename: vscode
+  - name: Install Visual Code 
+    become: true
+    apt:
+      name: code
+      update_cache: true
+
 ...
