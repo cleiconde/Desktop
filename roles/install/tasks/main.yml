@@ -56,10 +56,15 @@
       update_cache: yes
 
 - block:
+  - name: Install Microsoft Edge Key
+    become: yes
+    apt_key:
+      url: 'https://packages.microsoft.com/keys/microsoft.asc'
+      state: present
   - name: Install Microsoft Edge Repository
     become: yes
     apt_repository:
-      repo: "deb [arch=amd64] http://packages.microsoft.com/repos/edge/ stable main"
+      repo: 'deb [arch=amd64] http://packages.microsoft.com/repos/edge/ stable main'
       filename: microsoft_edge
   - name: Install Microsoft Edge
     become: yes
@@ -76,7 +81,7 @@
   - name: Install Microsoft Teams Repository
     become: yes
     apt_repository: 
-      repo: "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main"
+      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
       filename: microsoft_teams
   - name: Install Microsoft Teams 
     become: yes
