@@ -1,5 +1,5 @@
 ---
-- name: Instalando Programas
+- name: Installing Programs
   become: yes
   apt:
     name: "{{ item }}"
@@ -42,5 +42,18 @@
       become: yes
       apt:
         name: google-chrome-stable
+
+- block:
+  - name: Install KeePassXC Repository
+    become: yes
+    apt_repository:
+      repo: 'ppa:phoerious/keepassxc'
+      state: present
+      filename: keepassxc
+  - name: Install KeePassXC
+    become: yes
+    apt: 
+      name: keepassxc
+      update_cache: yes
 
 ...
