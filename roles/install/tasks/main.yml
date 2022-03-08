@@ -4,7 +4,7 @@
   apt:
     name: "{{ item }}"
     state: latest
-    update_cache: yes
+    #update_cache: yes
   loop: "{{ packages }}"  
 
   
@@ -23,7 +23,7 @@
   - name: Install Brave Browser
     become: true
     apt:
-      update_cache: yes
+      #update_cache: yes
       name: brave-browser
 
 ...
