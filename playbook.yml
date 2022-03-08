@@ -1,6 +1,7 @@
 ---
 - name: Configuração do Desktop
   hosts: localhost
+  connection: local
   gather_facts: no
   roles: 
     - install
