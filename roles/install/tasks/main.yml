@@ -75,8 +75,9 @@
       state: present
   - name: Install Microsoft Teams Repository
     become: yes
-    apt_repository: "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main"
-    filename: microsoft_teams
+    apt_repository: 
+      repo: "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main"
+      filename: microsoft_teams
   - name: Install Microsoft Teams 
     become: yes
     apt: 
