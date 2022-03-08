@@ -1,0 +1,7 @@
+---
+- name: Execução default
+  hosts: localhost
+  roles: 
+    - install
+
+...

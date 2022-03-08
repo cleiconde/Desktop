@@ -1,0 +1,16 @@
+---
+packages:
+  - htop
+  - vim
+  - tree
+  - jq
+  - curl
+  - wget
+  - zsh
+  - flameshot
+  - tilix
+  - virtualbox
+  - mlocate
+  
+
+...

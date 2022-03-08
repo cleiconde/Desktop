@@ -1,0 +1,11 @@
+---
+- name: Instalando Programas
+  become: yes
+  yum:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ packages }}"  
+
+  
+
+...
