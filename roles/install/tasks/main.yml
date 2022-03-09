@@ -22,7 +22,7 @@
   - name: Install Brave Browser
     become: true
     apt:
-      update_cache: true
+      #update_cache: true
       name: brave-browser
 
   - block:
@@ -53,7 +53,7 @@
     become: true
     apt: 
       name: keepassxc
-      update_cache: true
+      #update_cache: true
 
 - block:
   - name: Install Microsoft Edge Key
@@ -70,7 +70,7 @@
     become: true
     apt:
       name: microsoft-edge-stable
-      update_cache: true
+      #update_cache: true
 
 - block:
   - name: Install Microsoft Teams Key
@@ -87,7 +87,7 @@
     become: true
     apt: 
       name: teams
-      update_cache: true
+      #update_cache: true
 
 - block:
   - name: Install Vagrant Key
@@ -104,7 +104,7 @@
     become: true
     apt: 
       name: vagrant
-      update_cache: true
+      #update_cache: true
 
 - block:
   - name: Install Visual Code Key
@@ -122,7 +122,7 @@
     become: true
     apt:
       name: code
-      update_cache: true
+      #update_cache: true
 
 - block:
   - name: Install Dropbox Key
@@ -132,13 +132,13 @@
       id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   - name: Install Dropbox Repository
     become: true
-    apt_repository: 
-      repo: 'deb [arch=amd64] https://linux.dropbox.com/ubuntu focal main'
+    ansible.builtin.apt_repository: 
+      repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu focal main
       state: present
       filename: dropbox
   - name: Install Dropbox
     become: true
     apt:
       name: dropbox
-      update_cache: true
+      #update_cache: true
 ...
