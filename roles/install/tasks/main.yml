@@ -117,6 +117,19 @@
     become: true
     apt:
       name: code
+  - name: Install Virtual Studio Code Extensions
+    shell:
+      cmd: code --install-extension '{{ item }}' 
+    loop: 
+      - ms-python.python
+      - redhat.vscode-yaml
+      - redhat.ansible
+      - bbenoist.vagrant
+      - dracula-theme.theme-dracula
+      - pkief.material-icon-theme
+      - kevinrose.vsc-python-indent
+      - ms-vscode-remote.remote-ssh
+      - ms-vscode-remote.vscode-remote-extensionpack
 
 - block:
   - name: Install Dropbox Key
