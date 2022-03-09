@@ -33,7 +33,7 @@
   - name: Install Google Repository
     become: true
     apt_repository:
-      repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+      repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
       state: present
       filename: google-chrome
   - name: Install Google Chrome
@@ -63,7 +63,7 @@
     become: true
     apt_repository:
       repo: 'deb [arch=amd64] http://packages.microsoft.com/repos/edge/ stable main'
-      filename: microsoft_edge
+      filename: microsoft-edge
   - name: Install Microsoft Edge
     become: true
     apt:
@@ -79,7 +79,7 @@
     become: true
     apt_repository: 
       repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
-      filename: microsoft_teams
+      filename: teams
   - name: Install Microsoft Teams 
     become: true
     apt: 
