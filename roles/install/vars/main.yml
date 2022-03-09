@@ -14,4 +14,14 @@ packages:
   - apt-transport-https
   - python3-gpg
 
+vscode_extensions:
+  - ms-python.python
+  - redhat.vscode-yaml
+  - redhat.ansible
+  - bbenoist.vagrant
+  - dracula-theme.theme-dracula
+  - pkief.material-icon-theme
+  - kevinrose.vsc-python-indent
+  - ms-vscode-remote.remote-ssh
+  - ms-vscode-remote.vscode-remote-extensionpack
 ...
