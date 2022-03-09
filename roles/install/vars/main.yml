@@ -12,5 +12,6 @@ packages:
   - virtualbox
   - mlocate
   - apt-transport-https
+  - python3-gpg
 
 ...
