@@ -4,5 +4,5 @@
   connection: local               # Necessário para que o Ansible não tente se comunicar com o host via SSH
   gather_facts: no                # Evita que o Ansible colete todos os dados da máquina antes de iniciar a execução das tarefas
   roles: 
-    - install
+    - install                     # Irá executar o main.yml do diretório Install/Tasks 
 ...
