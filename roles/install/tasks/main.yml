@@ -133,7 +133,7 @@
   - name: Install Dropbox Repository
     become: true
     apt_repository: 
-      repo: 'deb https://linux.dropbox.com/ubuntu focal main'
+      repo: 'deb [arch=amd64] https://linux.dropbox.com/ubuntu focal main'
       state: present
       filename: dropbox
   - name: Install Dropbox
