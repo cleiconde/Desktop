@@ -22,25 +22,24 @@
   - name: Install Brave Browser
     become: true
     apt:
-      #update_cache: true
       name: brave-browser
 
-  - block:
-    - name: Install Google Key
-      become: true
-      apt_key: 
-        url: 'https://dl.google.com/linux/linux_signing_key.pub'
-        state: present
-    - name: Install Google Repository
-      become: true
-      apt_repository:
-        repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
-        state: present
-        filename: google-chrome
-    - name: Install Google Chrome
-      become: true
-      apt:
-        name: google-chrome-stable
+- block:
+  - name: Install Google Key
+    become: true
+    apt_key: 
+      url: 'https://dl.google.com/linux/linux_signing_key.pub'
+      state: present
+  - name: Install Google Repository
+    become: true
+    apt_repository:
+      repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+      state: present
+      filename: google-chrome
+  - name: Install Google Chrome
+    become: true
+    apt:
+      name: google-chrome-stable
 
 - block:
   - name: Install KeePassXC Repository
@@ -53,7 +52,6 @@
     become: true
     apt: 
       name: keepassxc
-      #update_cache: true
 
 - block:
   - name: Install Microsoft Edge Key
@@ -70,7 +68,6 @@
     become: true
     apt:
       name: microsoft-edge-stable
-      #update_cache: true
 
 - block:
   - name: Install Microsoft Teams Key
@@ -87,7 +84,6 @@
     become: true
     apt: 
       name: teams
-      #update_cache: true
 
 - block:
   - name: Install Vagrant Key
@@ -104,7 +100,6 @@
     become: true
     apt: 
       name: vagrant
-      #update_cache: true
 
 - block:
   - name: Install Visual Code Key
@@ -122,7 +117,6 @@
     become: true
     apt:
       name: code
-      #update_cache: true
 
 - block:
   - name: Install Dropbox Key
@@ -140,5 +134,4 @@
     become: true
     apt:
       name: dropbox
-      #update_cache: true
 ...
