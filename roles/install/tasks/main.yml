@@ -133,7 +133,7 @@
   - name: Install Dropbox Repository
     become: true
     ansible.builtin.apt_repository: 
-      repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu focal main
+      repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu disco main
       state: present
       filename: dropbox
   - name: Install Dropbox
