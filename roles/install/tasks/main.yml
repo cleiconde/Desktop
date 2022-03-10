@@ -118,7 +118,6 @@
     apt:
       name: code
   - name: Install Visual Studio Code Extensions      # Não é recomendado realizar a elevação de privilégio para instalação das extensões
-    become: no
     shell:
       cmd: code --install-extension '{{ item }}' 
     loop: '{{ vscode_extensions }}'
