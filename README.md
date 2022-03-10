@@ -2,12 +2,12 @@
 
 Este repositório contém a estrutura necessária para execução de uma playbook Ansible que irá automatizar a preparação da minha estação de trabalho.
 
->[!NOTE]
+>Aviso:
 >
 >Esta playbook foi desenvolvida para o Sistema Operacional Ubuntu 20.04. Caso utilize outro SO será necessário adaptar a playbook.
 
-#### **Antes de iniciar! **
->[!WARNING]
+#### **Antes de iniciar**!
+>Alerta:
 >
 >Leia os arquivos ```playbook.yml``` e ```roles/install/tasks/main.yml``` e certifique-se de que entendeu sua execução antes de aplicar em sua máquina.
 
@@ -29,7 +29,6 @@ cd Desktop
 ansible-playbook -K playbook.yml
 ```
 >Entre com sua senha para efetuar a elevação de privilégio necessária em algumas etapas da instalação
-
 
 
 
