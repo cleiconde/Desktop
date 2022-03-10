@@ -1,93 +1,93 @@
 ---
 - name: Installing Packages
-  become: true
+  become: yes
   apt:
     name: "{{ item }}"
     state: latest
-    update_cache: true
+    update_cache: yes
   loop: "{{ packages }}"  
   
 - block: 
   - name: Install Brave Key
-    become: true
+    become: yes
     apt_key:
       url: 'https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg'
       state: present
   - name: Install Brave Repository
-    become: true
+    become: yes
     apt_repository:
       repo: 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main'
       state: present
       filename: brave
   - name: Install Brave Browser
-    become: true
+    become: yes
     apt:
       name: brave-browser
 
 - block:
   - name: Install Google Key
-    become: true
+    become: yes
     apt_key: 
       url: 'https://dl.google.com/linux/linux_signing_key.pub'
       state: present
   - name: Install Google Repository
-    become: true
+    become: yes
     apt_repository:
       repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
       state: present
       filename: google-chrome
   - name: Install Google Chrome
-    become: true
+    become: yes
     apt:
       name: google-chrome-stable
 
 - block:
   - name: Install KeePassXC Repository
-    become: true
+    become: yes
     apt_repository:
       repo: 'ppa:phoerious/keepassxc'
       state: present
       filename: keepassxc
   - name: Install KeePassXC
-    become: true
+    become: yes
     apt: 
       name: keepassxc
 
 - block:
   - name: Install Microsoft Edge Key
-    become: true
+    become: yes
     apt_key:
       url: 'https://packages.microsoft.com/keys/microsoft.asc'
       state: present
   - name: Install Microsoft Edge Repository
-    become: true
+    become: yes
     apt_repository:
       repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/edge/ stable main'
       filename: microsoft-edge
   - name: Install Microsoft Edge
-    become: true
+    become: yes
     apt:
       name: microsoft-edge-stable
 
 - block:
   # - name: Install Microsoft Teams Key
-  #   become: true
+  #   become: yes
   #   apt_key: 
   #     url: 'https://packages.microsoft.com/keys/microsoft.asc'
   #     state: present
   - name: Install Microsoft Teams Repository
-    become: true
+    become: yes
     apt_repository: 
       repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
       filename: teams
   - name: Install Microsoft Teams 
-    become: true
+    become: yes
     apt: 
       name: teams
 
 - block:
   - name: Install Vagrant Key
-    become: true
+    become: yes
     apt_key:
       url: 'https://apt.releases.hashicorp.com/gpg'
       state: present
@@ -97,54 +97,56 @@
       state: present
       filename: vagrant
   - name: Install Vagrant 
-    become: true
+    become: yes
     apt: 
       name: vagrant
 
 - block:
   # - name: Install Visual Code Key
-  #   become: true
+  #   become: yes
   #   apt_key:
   #     url: 'https://packages.microsoft.com/keys/microsoft.asc'
   #     state: present
   - name: Install Visual Code Repository
-    become: true
+    become: yes
     apt_repository:
       repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/code stable main'
       state: present
       filename: vscode
   - name: Install Visual Code 
-    become: true
+    become: yes
     apt:
       name: code
   - name: Install Visual Studio Code Extensions      # Não é recomendado realizar a elevação de privilégio para instalação das extensões
-    become: false
+    become: no
     shell:
       cmd: code --install-extension '{{ item }}' 
     loop: '{{ vscode_extensions }}'
 
 - block:
   - name: Install Dropbox Key
-    become: true
+    become: yes
     apt_key: 
       keyserver: 'pgp.mit.edu'
       id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   - name: Install Dropbox Repository
-    become: true
+    become: yes
     ansible.builtin.apt_repository: 
       repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu disco main
       state: present
       filename: dropbox
   - name: Install Dropbox
-    become: true
+    become: yes
     apt:
       name: dropbox
   
   - name: Upgrade the OS Packages
     apt:
-      upgrade: yes
+      upgrade: 'yes'
+    become: yes
 
   - name: Remove dependencies that are no longer required
     apt:
       autoremove: yes
+    become: yes
 ...
