@@ -30,19 +30,19 @@ ansible-playbook -K playbook.yml
 ```
 >Entre com sua senha para efetuar a elevação de privilégio necessária em algumas etapas da instalação
 
-
+___
 
 ## Licence
 
 GNU General Public License v3.0
 
-
+___
 
 ## Autor
 Criado por **[Cleidson Conde](https://www.linkedin.com/in/cleidson-conde)**.
 
 
-
+___
 
 ## Créditos
-Crédito ao projeto do **[Caio Delgado](https://github.com/caiodelgadonew)** que me ajudou a montar este repositório. 
+Crédito ao projeto do **[Caio Delgado](https://github.com/caiodelgadonew)** que inspirou a criação deste repositório. 
