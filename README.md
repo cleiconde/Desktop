@@ -15,15 +15,15 @@ Este repositório contém a estrutura necessária para execução de uma playboo
 
 1. Instale as ferramentas necessárias para a execução da playbook.
 ```Shell
-sudo apt update && sudo apt install ansible git -y
+sudo apt update -y && sudo apt install ansible git -y
 ```
 
-2. Clone o repostirório
+2. Clone o repositório.
 ```Shell
 git clone https://github.com/cleiconde/Desktop.git
 ```
 
-3. Acesse o diretório <Desktop> e execute a playbook
+3. Acesse o diretório **Desktop** e execute a playbook **playbook.yml**.
 ```Shell
 cd Desktop
 ansible-playbook -K playbook.yml
