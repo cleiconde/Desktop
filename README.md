@@ -39,5 +39,5 @@ GNU General Public License v3.0
 ___
 
 ## Autor
-Crido por **[Cleidson Conde](www.linkedin.com/in/cleidson-conde)**.
+Crido por **[Cleidson Conde](https://www.linkedin.com/in/cleidson-conde)**.
 
