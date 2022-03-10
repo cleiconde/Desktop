@@ -39,5 +39,10 @@ GNU General Public License v3.0
 ___
 
 ## Autor
-Crido por **[Cleidson Conde](https://www.linkedin.com/in/cleidson-conde)**.
+Criado por **[Cleidson Conde](https://www.linkedin.com/in/cleidson-conde)**.
 
+
+___
+
+## Créditos
+Crédito ao projeto do **[Caio Delgado](https://github.com/caiodelgadonew)** que me ajudou a montar este repositório. 
