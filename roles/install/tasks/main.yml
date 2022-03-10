@@ -62,7 +62,7 @@
   - name: Install Microsoft Edge Repository
     become: true
     apt_repository:
-      repo: 'deb [arch=amd64] http://packages.microsoft.com/repos/edge/ stable main'
+      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/edge/ stable main'
       filename: microsoft-edge
   - name: Install Microsoft Edge
     become: true
@@ -138,4 +138,12 @@
     become: true
     apt:
       name: dropbox
+  
+  - name: Upgrade the OS Packages
+    apt:
+      upgrade: yes
+
+  - name: Remove dependencies that are no longer required
+    apt:
+      autoremove: yes
 ...
