@@ -25,6 +25,23 @@
       name: brave-browser
 
 - block:
+  - name: Install Dropbox Key
+    become: yes
+    apt_key: 
+      keyserver: pgp.mit.edu
+      id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+  - name: Install Dropbox Repository
+    become: yes
+    ansible.builtin.apt_repository: 
+      repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu disco main
+      state: present
+      filename: dropbox
+  - name: Install Dropbox
+    become: yes
+    apt:
+      name: dropbox
+
+- block:
   - name: Install Google Key
     become: yes
     apt_key: 
@@ -70,11 +87,6 @@
       name: microsoft-edge-stable
 
 - block:
-  # - name: Install Microsoft Teams Key
-  #   become: yes
-  #   apt_key: 
-  #     url: 'https://packages.microsoft.com/keys/microsoft.asc'
-  #     state: present
   - name: Install Microsoft Teams Repository
     become: yes
     apt_repository: 
@@ -103,11 +115,6 @@
       name: vagrant
 
 - block:
-  # - name: Install Visual Code Key
-  #   become: yes
-  #   apt_key:
-  #     url: 'https://packages.microsoft.com/keys/microsoft.asc'
-  #     state: present
   - name: Install Visual Code Repository
     become: yes
     apt_repository:
@@ -123,30 +130,13 @@
       cmd: code --install-extension '{{ item }}' 
     loop: '{{ vscode_extensions }}'
 
-- block:
-  - name: Install Dropbox Key
-    become: yes
-    apt_key: 
-      keyserver: pgp.mit.edu
-      id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-  - name: Install Dropbox Repository
-    become: yes
-    ansible.builtin.apt_repository: 
-      repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu disco main
-      state: present
-      filename: dropbox
-  - name: Install Dropbox
-    become: yes
-    apt:
-      name: dropbox
-  
-  - name: Upgrade the OS Packages
-    apt:
-      upgrade: 'yes'
-    become: yes
+- name: Upgrade the OS Packages
+  apt:
+    upgrade: 'yes'
+  become: yes
 
-  - name: Remove dependencies that are no longer required
-    apt:
-      autoremove: yes
-    become: yes
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
+  become: yes
 ...
