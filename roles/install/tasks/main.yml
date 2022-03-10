@@ -70,11 +70,11 @@
       name: microsoft-edge-stable
 
 - block:
-  - name: Install Microsoft Teams Key
-    become: true
-    apt_key: 
-      url: 'https://packages.microsoft.com/keys/microsoft.asc'
-      state: present
+  # - name: Install Microsoft Teams Key
+  #   become: true
+  #   apt_key: 
+  #     url: 'https://packages.microsoft.com/keys/microsoft.asc'
+  #     state: present
   - name: Install Microsoft Teams Repository
     become: true
     apt_repository: 
@@ -102,11 +102,11 @@
       name: vagrant
 
 - block:
-  - name: Install Visual Code Key
-    become: true
-    apt_key:
-      url: 'https://packages.microsoft.com/keys/microsoft.asc'
-      state: present
+  # - name: Install Visual Code Key
+  #   become: true
+  #   apt_key:
+  #     url: 'https://packages.microsoft.com/keys/microsoft.asc'
+  #     state: present
   - name: Install Visual Code Repository
     become: true
     apt_repository:
@@ -117,7 +117,8 @@
     become: true
     apt:
       name: code
-  - name: Install Virtual Studio Code Extensions      # Não é recomendado realizar a elevação de privilégio para instalação das extensões
+  - name: Install Visual Studio Code Extensions      # Não é recomendado realizar a elevação de privilégio para instalação das extensões
+    become: false
     shell:
       cmd: code --install-extension '{{ item }}' 
     loop: '{{ vscode_extensions }}'
