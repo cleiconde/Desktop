@@ -92,6 +92,7 @@
       url: 'https://apt.releases.hashicorp.com/gpg'
       state: present
   - name: Install Vagrant Repository
+    become: yes
     apt_repository:
       repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com focal main'
       state: present
