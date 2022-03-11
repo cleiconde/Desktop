@@ -11,3 +11,4 @@ deb [http://dell.archive.canonical.com/updates/](http://dell.archive.canonical.c
 deb [http://dell.archive.canonical.com/updates/](http://dell.archive.canonical.com/updates/) focal-somerville-melisa public
 # deb-src [http://dell.archive.canonical.com/updates](http://dell.archive.canonical.com/updates) focal-somerville-melisa public
 EOF'
+sudo apt-key adv --keyserver [keyserver.ubuntu.com](http://keyserver.ubuntu.com/) --recv-keys F9FDA6BED73CDC22
