@@ -7,128 +7,140 @@
     update_cache: yes
   loop: "{{ packages }}"  
   
-- block: 
-  - name: Install Brave Key
-    become: yes
-    apt_key:
-      url: 'https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg'
-      state: present
-  - name: Install Brave Repository
-    become: yes
-    apt_repository:
-      repo: 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main'
-      state: present
-      filename: brave
-  - name: Install Brave Browser
-    become: yes
-    apt:
-      name: brave-browser
+ 
+- name: Install Brave Key
+  become: yes
+  apt_key:
+    url: 'https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg'
+    state: present
+- name: Install Brave Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main'
+    state: present
+    filename: brave
+- name: Install Brave Browser
+  become: yes
+  apt:
+    name: brave-browser
 
-- block:
-  - name: Install Dropbox Key
-    become: yes
-    apt_key: 
-      keyserver: pgp.mit.edu
-      id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-  - name: Install Dropbox Repository
-    become: yes
-    ansible.builtin.apt_repository: 
-      repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu disco main
-      state: present
-      filename: dropbox
-  - name: Install Dropbox
-    become: yes
-    apt:
-      name: dropbox
 
-- block:
-  - name: Install Google Key
-    become: yes
-    apt_key: 
-      url: 'https://dl.google.com/linux/linux_signing_key.pub'
-      state: present
-  - name: Install Google Repository
-    become: yes
-    apt_repository:
-      repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
-      state: present
-      filename: google-chrome
-  - name: Install Google Chrome
-    become: yes
-    apt:
-      name: google-chrome-stable
+- name: Install Dropbox Key
+  become: yes
+  apt_key: 
+    keyserver: pgp.mit.edu
+    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+- name: Install Dropbox Repository
+  become: yes
+  ansible.builtin.apt_repository: 
+    repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu disco main
+    state: present
+    filename: dropbox
+- name: Install Dropbox
+  become: yes
+  apt:
+    name: dropbox
 
-- block:
-  - name: Install KeePassXC Repository
-    become: yes
-    apt_repository:
-      repo: 'ppa:phoerious/keepassxc'
-      state: present
-      filename: keepassxc
-  - name: Install KeePassXC
-    become: yes
-    apt: 
-      name: keepassxc
 
-- block:
-  - name: Install Microsoft Edge Key
-    become: yes
-    apt_key:
-      url: 'https://packages.microsoft.com/keys/microsoft.asc'
-      state: present
-  - name: Install Microsoft Edge Repository
-    become: yes
-    apt_repository:
-      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/edge/ stable main'
-      filename: microsoft-edge
-  - name: Install Microsoft Edge
-    become: yes
-    apt:
-      name: microsoft-edge-stable
+- name: Install Google Key
+  become: yes
+  apt_key: 
+    url: 'https://dl.google.com/linux/linux_signing_key.pub'
+    state: present
+- name: Install Google Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
+    state: present
+    filename: google-chrome
+- name: Install Google Chrome
+  become: yes
+  apt:
+    name: google-chrome-stable
 
-- block:
-  - name: Install Microsoft Teams Repository
-    become: yes
-    apt_repository: 
-      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
-      filename: teams
-  - name: Install Microsoft Teams 
-    become: yes
-    apt: 
-      name: teams
 
-- block:
-  - name: Install Vagrant Key
-    become: yes
-    apt_key:
-      url: 'https://apt.releases.hashicorp.com/gpg'
-      state: present
-  - name: Install Vagrant Repository
-    become: yes
-    apt_repository:
-      repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com focal main'
-      state: present
-      filename: vagrant
-  - name: Install Vagrant 
-    become: yes
-    apt: 
-      name: vagrant
+- name: Install KeePassXC Repository
+  become: yes
+  apt_repository:
+    repo: 'ppa:phoerious/keepassxc'
+    state: present
+    filename: keepassxc
+- name: Install KeePassXC
+  become: yes
+  apt: 
+    name: keepassxc
 
-- block:
-  - name: Install Visual Code Repository
-    become: yes
-    apt_repository:
-      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/code stable main'
-      state: present
-      filename: vscode
-  - name: Install Visual Code 
-    become: yes
-    apt:
-      name: code
-  - name: Install Visual Studio Code Extensions      # Não é recomendado realizar a elevação de privilégio para instalação das extensões
-    shell:
-      cmd: code --install-extension '{{ item }}' 
-    loop: '{{ vscode_extensions }}'
+
+- name: Install Microsoft Edge Key
+  become: yes
+  apt_key:
+    url: 'https://packages.microsoft.com/keys/microsoft.asc'
+    state: present
+- name: Install Microsoft Edge Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/edge/ stable main'
+    filename: microsoft-edge
+- name: Install Microsoft Edge
+  become: yes
+  apt:
+    name: microsoft-edge-stable
+
+
+- name: Install Microsoft Teams Repository
+  become: yes
+  apt_repository: 
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
+    filename: teams
+- name: Install Microsoft Teams 
+  become: yes
+  apt: 
+    name: teams
+
+
+- name: Install Vagrant Key
+  become: yes
+  apt_key:
+    url: 'https://apt.releases.hashicorp.com/gpg'
+    state: present
+- name: Install Vagrant Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com focal main'
+    state: present
+    filename: vagrant
+- name: Install Vagrant 
+  become: yes
+  apt: 
+    name: vagrant
+
+
+- name: Install Visual Code Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/code stable main'
+    state: present
+    filename: vscode
+- name: Install Visual Code 
+  become: yes
+  apt:
+    name: code
+- name: Install Visual Studio Code Extensions      # Não é recomendado realizar a elevação de privilégio para instalação das extensões
+  shell:
+    cmd: code --install-extension '{{ item }}' 
+  loop: '{{ vscode_extensions }}'
+
+
+
+
+- name: Install Dell Repository
+  become: yes
+  apt_repository:
+    repo: deb [http://dell.archive.canonical.com/updates/](http://dell.archive.canonical.com/updates/) focal-dell public
+
+
+
+
 
 - name: Upgrade the OS Packages
   apt:

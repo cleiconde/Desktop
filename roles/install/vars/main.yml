@@ -23,5 +23,4 @@ vscode_extensions:
   - pkief.material-icon-theme
   - kevinrose.vsc-python-indent
   - ms-vscode-remote.remote-ssh
-  - ms-vscode-remote.vscode-remote-extensionpack
 ...
