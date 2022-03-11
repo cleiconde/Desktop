@@ -131,7 +131,11 @@
   loop: '{{ vscode_extensions }}'
 
 
-
+- name: Install Dell Key
+  become: yes
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: F9FDA6BED73CDC22
 
 - name: Install Dell Repository
   become: yes
