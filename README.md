@@ -15,7 +15,7 @@ Este repositório contém a estrutura necessária para execução de uma playboo
 
 1. Instale as ferramentas necessárias para a execução da playbook.
 ```Shell
-sudo apt update -y && sudo apt install ansible git -y
+sudo apt update && sudo apt install ansible git -y
 ```
 
 2. Clone o repositório.
