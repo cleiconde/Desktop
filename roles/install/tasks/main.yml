@@ -136,8 +136,9 @@
 - name: Install Dell Repository
   become: yes
   apt_repository:
-    repo: deb [http://dell.archive.canonical.com/updates/](http://dell.archive.canonical.com/updates/) focal-dell public
-
+    repo: "deb [http://dell.archive.canonical.com/updates/](http://dell.archive.canonical.com/updates/) focal-dell public"
+    state: present
+    filename: focal-dell
 
 
 
