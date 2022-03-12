@@ -31,7 +31,6 @@ ansible-playbook -K playbook.yml
 >Entre com sua senha para efetuar a elevação de privilégio necessária em algumas etapas da instalação
 
 
-4. Tome um enquanto aguarda sua máquina ficar pronta.
 ___
 
 ## Licence
