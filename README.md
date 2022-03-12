@@ -18,7 +18,7 @@ Este repositório contém a estrutura necessária para execução de uma playboo
 sudo apt update && sudo apt install ansible git -y
 ```
 
-2. Clone o repositório.
+2. Clone este repositório.
 ```Shell
 git clone https://github.com/cleiconde/Desktop.git
 ```
@@ -30,6 +30,8 @@ ansible-playbook -K playbook.yml
 ```
 >Entre com sua senha para efetuar a elevação de privilégio necessária em algumas etapas da instalação
 
+
+4. Tome um enquanto aguarda sua máquina ficar pronta.
 ___
 
 ## Licence
@@ -42,7 +44,3 @@ ___
 Criado por **[Cleidson Conde](https://www.linkedin.com/in/cleidson-conde)**.
 
 
-___
-
-## Créditos
-Crédito ao projeto do **[Caio Delgado](https://github.com/caiodelgadonew)** que inspirou a criação deste repositório. 

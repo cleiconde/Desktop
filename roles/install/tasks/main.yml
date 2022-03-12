@@ -174,7 +174,6 @@
   loop: "{{ dell_drivers }}"
 
 
-
 - name: Upgrade the OS Packages
   apt:
     upgrade: 'yes'
