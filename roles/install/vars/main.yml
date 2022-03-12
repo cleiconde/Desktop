@@ -23,4 +23,10 @@ vscode_extensions:
   - pkief.material-icon-theme
   - kevinrose.vsc-python-indent
   - ms-vscode-remote.remote-ssh
+
+dell_drivers:
+  - oem-somerville-melisa-meta 
+  - libfprint-2-tod1-goodix 
+  - oem-somerville-meta 
+  - tlp-config
 ...

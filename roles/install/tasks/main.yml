@@ -137,13 +137,41 @@
     keyserver: keyserver.ubuntu.com
     id: F9FDA6BED73CDC22
 
-- name: Install Dell Repository
+- name: Install Dell Focal Repository
   become: yes
   apt_repository:
-    repo: "deb [http://dell.archive.canonical.com/updates/](http://dell.archive.canonical.com/updates/) focal-dell public"
+    repo: deb http://dell.archive.canonical.com/updates/ focal-dell public
     state: present
     filename: focal-dell
 
+- name: Install Dell Focal-OEM Repository 
+  become: yes
+  apt_repository:
+    repo: deb http://dell.archive.canonical.com/updates/ focal-oem public
+    state: present
+    filename: focal-dell
+
+- name: Install Dell Focal-SomervilleRepository
+  become: yes
+  apt_repository:
+    repo: deb http://dell.archive.canonical.com/updates/ focal-somerville public
+    state: present
+    filename: focal-dell
+
+- name: Install Dell Focal-Somerville-Melisa Repository
+  become: yes
+  apt_repository:
+    repo: deb http://dell.archive.canonical.com/updates/ focal-somerville-melisa public
+    state: present
+    filename: focal-dell
+
+- name: Install Dell Drivers
+  shell:
+    apt:
+      name: "{{ item }}"
+      state: latest
+      update_cache: yes
+  loop: "{{ dell_drivers }}"
 
 
 
