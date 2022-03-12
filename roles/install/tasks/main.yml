@@ -166,11 +166,11 @@
     filename: focal-dell
 
 - name: Install Dell Drivers
-  shell:
-    apt:
-      name: "{{ item }}"
-      state: latest
-      update_cache: yes
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
   loop: "{{ dell_drivers }}"
 
 
