@@ -79,10 +79,16 @@
   loop: '{{ vscode_extensions }}'
 
 
+- name: Verify if Oh-My-zsh is installed
+  command: test -d /home/{{ ansible_user_id }}/.oh-my-zsh
+  register: ohmyzsh
+  ignore_errors: true
+
+
 - name: Install Oh My ZSH
   shell:
     cmd: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
+  when: ohmyzsh.rc != 0           # Return Code diferente de 0
 
 - name: Upgrade the OS Packages
   become: yes
