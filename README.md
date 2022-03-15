@@ -9,13 +9,14 @@ Este repositório contém a estrutura necessária para execução de uma playboo
 #### **Antes de iniciar**!
 >Alerta:
 >
->Leia os arquivos ```playbook.yml``` e ```roles/install/tasks/main.yml``` e certifique-se de que entendeu sua execução antes de aplicar em sua máquina.
+>Certifique-se de que entendeu a execução desta playbook antes de aplicar em sua máquina (prefira usar uma máquina virtual para testes).
 
 ## Instalação:
 
 1. Instale as ferramentas necessárias para a execução da playbook.
 ```Shell
 sudo apt update && sudo apt install ansible git -y
+sudo ansible-galaxy collection install community.general
 ```
 
 2. Clone este repositório.

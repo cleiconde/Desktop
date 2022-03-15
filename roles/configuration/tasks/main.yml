@@ -1,0 +1,17 @@
+---
+- name: Configurando o terminal padrão para o Tilix
+  become: yes
+  community.general.alternatives:
+    name: x-terminal-emulator
+    path: /usr/bin/tilix.wrapper
+
+
+- name: Alterando o Shell padrão para o ZSH
+  become: yes
+  user: 
+    name: '{{ ansible_user_id }}'
+    shell: /bin/zsh 
+
+
+
+...

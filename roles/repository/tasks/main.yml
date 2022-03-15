@@ -1,0 +1,149 @@
+---
+- name: Install Brave Key
+  become: yes
+  apt_key:
+    url: 'https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg'
+    state: present
+    
+
+- name: Install Brave Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main'
+    state: present
+    filename: brave
+    update_cache: no
+
+
+- name: Install Dell Key
+  become: yes
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: F9FDA6BED73CDC22
+    
+
+- name: Install Dell Focal Repository
+  become: yes
+  apt_repository:
+    repo: deb http://dell.archive.canonical.com/updates/ focal-dell public
+    state: present
+    filename: focal-dell
+    update_cache: no
+
+
+- name: Install Dell Focal-OEM Repository 
+  become: yes
+  apt_repository:
+    repo: deb http://dell.archive.canonical.com/updates/ focal-oem public
+    state: present
+    filename: focal-dell
+    update_cache: no
+
+
+- name: Install Dell Focal-SomervilleRepository
+  become: yes
+  apt_repository:
+    repo: deb http://dell.archive.canonical.com/updates/ focal-somerville public
+    state: present
+    filename: focal-dell
+    update_cache: no
+
+
+- name: Install Dell Focal-Somerville-Melisa Repository
+  become: yes
+  apt_repository:
+    repo: deb http://dell.archive.canonical.com/updates/ focal-somerville-melisa public
+    state: present
+    filename: focal-dell
+    update_cache: no
+
+
+- name: Install Dropbox Key
+  become: yes
+  apt_key: 
+    keyserver: pgp.mit.edu
+    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+
+
+- name: Install Dropbox Repository
+  become: yes
+  ansible.builtin.apt_repository: 
+    repo: deb [arch=amd64] https://linux.dropbox.com/ubuntu disco main
+    state: present
+    filename: dropbox
+    update_cache: no
+
+
+- name: Install Google Key
+  become: yes
+  apt_key: 
+    url: 'https://dl.google.com/linux/linux_signing_key.pub'
+    state: present
+
+
+- name: Install Google Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
+    state: present
+    filename: google-chrome
+    update_cache: no
+
+
+- name: Install KeePassXC Repository
+  become: yes
+  apt_repository:
+    repo: 'ppa:phoerious/keepassxc'
+    state: present
+    filename: keepassxc
+    update_cache: no
+
+
+- name: Install Microsoft Key
+  become: yes
+  apt_key:
+    url: 'https://packages.microsoft.com/keys/microsoft.asc'
+    state: present
+
+
+- name: Install Microsoft Edge Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/edge/ stable main'
+    filename: microsoft-edge
+    update_cache: no
+
+
+- name: Install Microsoft Teams Repository
+  become: yes
+  apt_repository: 
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main'
+    filename: teams
+    update_cache: no
+
+
+- name: Install Vagrant Key
+  become: yes
+  apt_key:
+    url: 'https://apt.releases.hashicorp.com/gpg'
+    state: present
+
+
+- name: Install Vagrant Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com focal main'
+    state: present
+    filename: vagrant
+    update_cache: no
+
+
+- name: Install Visual Code Repository
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/code stable main'
+    state: present
+    filename: vscode
+    update_cache: no
+
+...
