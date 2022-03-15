@@ -16,7 +16,7 @@ Este repositório contém a estrutura necessária para execução de uma playboo
 1. Instale as ferramentas necessárias para a execução da playbook.
 ```Shell
 sudo apt update && sudo apt install ansible git -y
-sudo ansible-galaxy collection install community.general
+ansible-galaxy collection install community.general
 ```
 
 2. Clone este repositório.

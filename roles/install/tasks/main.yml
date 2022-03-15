@@ -4,7 +4,7 @@
   apt:
     name: "{{ item }}"
     state: latest
-    update_cache: yes
+    update_cache: no
   loop: "{{ packages }}"  
   
  
@@ -12,6 +12,7 @@
   become: yes
   apt:
     name: brave-browser
+    update_cache: no
 
 
 - name: Install Dell Drivers
@@ -19,7 +20,7 @@
   apt:
     name: "{{ item }}"
     state: latest
-    update_cache: yes
+    update_cache: no
   loop: "{{ dell_drivers }}"
 
 
@@ -27,42 +28,49 @@
   become: yes
   apt:
     name: dropbox
+    update_cache: no
 
 
 - name: Install Google Chrome
   become: yes
   apt:
     name: google-chrome-stable
+    update_cache: no
 
 
 - name: Install KeePassXC
   become: yes
   apt: 
     name: keepassxc
+    update_cache: no
 
 
 - name: Install Microsoft Edge
   become: yes
   apt:
     name: microsoft-edge-stable
+    update_cache: no
 
 
 - name: Install Microsoft Teams 
   become: yes
   apt: 
     name: teams
+    update_cache: no
 
 
 - name: Install Vagrant 
   become: yes
   apt: 
     name: vagrant
+    update_cache: no
 
 
 - name: Install Visual Code 
   become: yes
   apt:
     name: code
+    update_cache: no
 
 
 - name: Install Visual Studio Code Extensions      # Não é recomendado realizar a elevação de privilégio para instalação das extensões
@@ -81,7 +89,6 @@
   become: yes
   apt:
     upgrade: 'yes'
-  
 
 
 - name: Remove dependencies that are no longer required
