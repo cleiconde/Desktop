@@ -13,6 +13,7 @@ packages:
   - mlocate
   - apt-transport-https
   - python3-gpg
+  - fonts-powerline
 
 
 dell_drivers:
@@ -20,7 +21,7 @@ dell_drivers:
   - libfprint-2-tod1-goodix 
   - oem-somerville-meta 
   - tlp-config
-  
+
 
 vscode_extensions:
   - ms-python.python
