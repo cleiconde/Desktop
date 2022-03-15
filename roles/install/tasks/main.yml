@@ -79,8 +79,7 @@
   loop: '{{ vscode_extensions }}'
 
 
-- name: Install ZSH
-  become: yes
+- name: Install Oh My ZSH
   shell:
     cmd: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
