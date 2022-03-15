@@ -4,7 +4,7 @@
   apt:
     name: "{{ item }}"
     state: latest
-    update_cache: no
+    update_cache: yes
   loop: "{{ packages }}"  
   
  
@@ -12,7 +12,7 @@
   become: yes
   apt:
     name: brave-browser
-    update_cache: yes
+    update_cache: no
 
 
 - name: Install Dell Drivers
