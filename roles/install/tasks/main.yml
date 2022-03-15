@@ -81,13 +81,13 @@
 
 - name: Verify if Oh-My-zsh is installed
   command: test -d /home/{{ ansible_user_id }}/.oh-my-zsh
-  register: ohmyzsh                                # Registra o código de saída do comando anterior na variável
+  register: ohmyzsh                                # Registra o Return Code do comando anterior na variável ohmyzsh
   ignore_errors: true
 
 - name: Install Oh My ZSH
   shell:
     cmd: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  when: ohmyzsh.rc != 0                           # Se o Return Code for diferente de 0, executa o cmd
+  when: ohmyzsh.rc != 0                           # Executa o cmd quando o Return Code for diferente de 0
 
 
 - name: Upgrade the OS Packages
