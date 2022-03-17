@@ -13,17 +13,20 @@
     shell: /bin/zsh 
 
 
-
 - name: Changing Default ZSH Theme to Agnoster
   lineinfile:
     path: /home/{{ ansible_user_id }}/.zshrc
     regexp: '^ZSH_THEME='
     line: 'ZSH_THEME="agnoster"'
+
+
 - name: Creating ZSH Completion folder
   file:
     path: /home/{{ ansible_user_id }}/.oh-my-zsh/completions
     state: directory
     mode: 0755
+
+
 - name: Adding autoload to compinit
   lineinfile:
     path: /home/{{ ansible_user_id }}/.zshrc

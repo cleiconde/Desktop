@@ -13,7 +13,9 @@ packages:
   - mlocate
   - apt-transport-https
   - python3-gpg
+  - python3-pip
   - fonts-powerline
+  - bash-completion
 
 
 dell_drivers:
