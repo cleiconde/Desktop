@@ -6,6 +6,7 @@ packages:
   - flameshot
   - fonts-powerline
   - htop
+  - gnome-tweaks
   - jq
   - mlocate
   - python3-gpg
