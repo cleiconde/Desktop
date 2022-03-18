@@ -1,38 +1,38 @@
 ---
 packages:
-  - htop
-  - vim
-  - tree
-  - jq
-  - curl
-  - wget
-  - zsh
-  - flameshot
-  - tilix
-  - virtualbox
-  - mlocate
   - apt-transport-https
+  - bash-completion
+  - curl
+  - flameshot
+  - fonts-powerline
+  - htop
+  - jq
+  - mlocate
   - python3-gpg
   - python3-pip
-  - fonts-powerline
-  - bash-completion
+  - tilix
+  - tree
+  - vim
+  - virtualbox
+  - wget
+  - zsh
 
 
 dell_drivers:
-  - oem-somerville-melisa-meta 
   - libfprint-2-tod1-goodix 
   - oem-somerville-meta 
+  - oem-somerville-melisa-meta
   - tlp-config
 
 
 vscode_extensions:
-  - ms-python.python
-  - redhat.vscode-yaml
-  - redhat.ansible
   - bbenoist.vagrant
   - dracula-theme.theme-dracula
-  - pkief.material-icon-theme
   - kevinrose.vsc-python-indent
+  - ms-python.python
   - ms-vscode-remote.remote-ssh
+  - pkief.material-icon-theme
+  - redhat.ansible
+  - redhat.vscode-yaml
 
 ...
