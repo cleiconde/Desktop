@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local               # Necessário para que o Ansible não tente se comunicar com o host via SSH  
   roles: 
-    - repository                  # Irá executar o main.yml do diretório roles/repository/tasks 
-    - install                     # Irá executar o main.yml do diretório roles/install/tasks 
-    - configuration               # Irá executar o main.yml do diretório roles/configuration/tasks 
+    - {role: 'repository', tags:'repo'}                  # Irá executar o main.yml do diretório roles/repository/tasks 
+    - {role: 'install', tags:'install'}                  # Irá executar o main.yml do diretório roles/install/tasks 
+    - {role: 'configuration', tags:'config'}             # Irá executar o main.yml do diretório roles/configuration/tasks 
 ...
