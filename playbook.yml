@@ -1,5 +1,5 @@
 ---
-- name: Configuração do Desktop
+- name: Desktop Configuration
   hosts: localhost
   connection: local               # Necessário para que o Ansible não tente se comunicar com o host via SSH  
   roles: 
