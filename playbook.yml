@@ -1,4 +1,8 @@
 ---
+# Author: Cleidson Conde
+# Description: automating the installation of programs on the desktop
+# Ansible Version: 2.9.6
+
 - name: Desktop Configuration
   hosts: localhost
   connection: local               # Necessário para que o Ansible não tente se comunicar com o host via SSH  
