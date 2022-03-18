@@ -1,19 +1,19 @@
 ---
-- name: Configurando o terminal padrão para o Tilix
+- name: Changing default terminal to Tilix
   become: yes
   community.general.alternatives:
     name: x-terminal-emulator
     path: /usr/bin/tilix.wrapper
 
 
-- name: Alterando o Shell padrão para o ZSH
+- name: Changing default shell to ZSH
   become: yes
   user: 
     name: '{{ ansible_user_id }}'
     shell: /bin/zsh 
 
 
-- name: Changing Default ZSH Theme to Agnoster
+- name: Changing default ZSH theme to Agnoster
   lineinfile:
     path: /home/{{ ansible_user_id }}/.zshrc
     regexp: '^ZSH_THEME='
