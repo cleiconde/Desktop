@@ -83,8 +83,7 @@
   command: test -d /home/{{ ansible_user_id }}/.oh-my-zsh
   register: ohmyzsh                                # Registra o Return Code do comando anterior na variável ohmyzsh
   ignore_errors: true
-  ansible.builtin.debug:
-    msg: "É esperado um erro na primeira execução desta playbook. Caso já estaja instalado, esta tarefa será ignorada."
+
 
 - name: Install Oh My ZSH
   shell:
