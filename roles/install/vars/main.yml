@@ -11,8 +11,10 @@ packages:
   - mlocate
   - python3-gpg
   - python3-pip
+  - spotify-client
   - tilix
   - tree
+  - ubuntu-restricted-extras
   - vim
   - virtualbox
   - wget
