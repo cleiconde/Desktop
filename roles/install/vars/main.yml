@@ -8,6 +8,8 @@ packages:
   - htop
   - gnome-tweaks
   - jq
+  - libnss3-tools
+  - linux-firmware
   - mlocate
   - python3-gpg
   - python3-pip
