@@ -6,6 +6,11 @@
     path: /usr/bin/tilix.wrapper
 
 
+# - name: Fix the error with profiles
+#   become: yes
+
+
+
 - name: Changing default shell to ZSH
   become: yes
   user: 

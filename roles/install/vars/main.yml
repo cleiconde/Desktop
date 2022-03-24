@@ -33,11 +33,13 @@ dell_drivers:
 vscode_extensions:
   - bbenoist.vagrant
   - dracula-theme.theme-dracula
+  - formulahendry.code-runner
   - kevinrose.vsc-python-indent
   - ms-python.python
   - ms-vscode-remote.remote-ssh
   - pkief.material-icon-theme
   - redhat.ansible
   - redhat.vscode-yaml
+  
 
 ...
