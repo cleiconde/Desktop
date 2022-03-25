@@ -6,15 +6,32 @@
     path: /usr/bin/tilix.wrapper
 
 
-- name: Copy profile configuration
+- name: Copy Tilix profile configuration
   copy:
     src: tilix.dconf
     dest: /home/{{ ansible_user_id }}/
 
 
-- name: Apply profile configuration
+- name: Apply Tilix profile configuration
   shell:
     cmd: "dconf load /com/gexperts/Tilix/ < /home/{{ ansible_user_id }}/tilix.dconf"
+
+
+- name: Fix Tilix profile issue
+  blockinfile:
+    path: /home/{{ ansible_user_id }}/.zshrc
+    block: |
+      if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+      fi
+
+
+- name: Fix Tilix profile issue
+  become: yes
+  file:
+    src: /etc/profile.d/vte-2.91.sh       # Origem
+    dest: /etc/profile.d/vte.sh           # Link
+    state: link
 
 
 - name: Changing default shell to ZSH
@@ -29,6 +46,13 @@
     path: /home/{{ ansible_user_id }}/.zshrc
     regexp: '^ZSH_THEME='
     line: 'ZSH_THEME="agnoster"'
+
+
+- name: Add plugins ZSH
+  lineinfile:
+    path: /home/{{ ansible_user_id }}/.zshrc
+    regexp: '^plugins='
+    line: 'plugins=(git sudo)'
 
 
 - name: Creating ZSH Completion folder
