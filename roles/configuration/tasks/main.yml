@@ -7,14 +7,12 @@
 
 
 - name: Copy profile configuration
-  become: yes
   copy:
     src: tilix.dconf
     dest: /home/{{ ansible_user_id }}/
 
 
 - name: Apply profile configuration
-  become: yes
   shell:
     cmd: "dconf load /com/gexperts/Tilix/ < /home/{{ ansible_user_id }}/tilix.dconf"
 
