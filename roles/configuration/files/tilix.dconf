@@ -1,0 +1,24 @@
+[/]
+quake-specific-monitor=0
+
+[profiles]
+default='d2f1a179-f30d-4400-bcee-39e034b9152c'
+list=['2b7c4080-0ddd-46c5-8f23-563fd3ba789d', 'd2f1a179-f30d-4400-bcee-39e034b9152c']
+
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+draw-margin=84
+font='Ubuntu Mono derivative Powerline 12'
+use-system-font=false
+visible-name='Padrão'
+
+[profiles/d2f1a179-f30d-4400-bcee-39e034b9152c]
+background-transparency-percent=0
+bold-is-bright=true
+default-size-columns=150
+default-size-rows=30
+font='Ubuntu Mono derivative Powerline 12'
+login-shell=true
+use-system-font=false
+use-theme-colors=true
+visible-name='perfil_cleidson'
+

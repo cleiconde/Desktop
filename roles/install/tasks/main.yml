@@ -103,8 +103,6 @@
 
 
 
-
-
 - name: Upgrade the OS Packages
   become: yes
   apt:
