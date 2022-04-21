@@ -91,18 +91,6 @@
   when: ohmyzsh.rc != 0                           # Executa o cmd quando o Return Code for diferente de 0
 
 
-# - name: Verify if Pulse Secure is installed
-#   command: apt list --instaled | grep pulsesecure
-#   register: pulsesecure
-  
-
-# - name: Install Pulse Secure
-#   shell:
-#     cmd: 
-#   when: 
-
-
-
 - name: Upgrade the OS Packages
   become: yes
   apt:
