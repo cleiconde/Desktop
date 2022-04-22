@@ -4,7 +4,7 @@ Este repositório contém a estrutura necessária para execução de uma playboo
 
 >Aviso:
 >
->Esta playbook foi desenvolvida para o Sistema Operacional Ubuntu 20.04. Caso utilize outro SO será necessário adaptar a playbook.
+>Esta playbook foi desenvolvida para o Sistema Operacional Ubuntu **[20.04]()**. Caso utilize outro SO será necessário adaptar a playbook.
 
 #### **Antes de iniciar**!
 >Alerta:
