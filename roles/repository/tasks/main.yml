@@ -1,4 +1,10 @@
 ---
+- name: Install Dropbox Key
+  become: yes
+  apt_key: 
+    keyserver: pgp.mit.edu
+    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+
 - name: Install Brave Key
   become: yes
   apt_key:
@@ -58,11 +64,7 @@
     update_cache: no
 
 
-- name: Install Dropbox Key
-  become: yes
-  apt_key: 
-    keyserver: pgp.mit.edu
-    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+
 
 
 - name: Install Dropbox Repository
@@ -161,5 +163,10 @@
     state: present
     filename: vscode
     update_cache: no
+
+- name: Update update_cache
+  become: yes
+  apt_repository:
+    update_cache: yes
 
 ...
