@@ -5,6 +5,7 @@
     keyserver: pgp.mit.edu
     id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 
+
 - name: Install Brave Key
   become: yes
   apt_key:
@@ -62,9 +63,6 @@
     state: present
     filename: focal-dell
     update_cache: no
-
-
-
 
 
 - name: Install Dropbox Repository
@@ -164,9 +162,8 @@
     filename: vscode
     update_cache: no
 
+
 - name: Update update_cache
   become: yes
-  apt_repository:
+  apt:
     update_cache: yes
-
-...
